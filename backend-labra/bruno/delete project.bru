@@ -1,0 +1,15 @@
+meta {
+  name: Delete Project
+  type: http
+  seq: 3
+}
+
+delete {
+  url: http://localhost:3000/projects?name=project6
+  body: none
+  auth: inherit
+}
+
+params:query {
+  name: project6
+}

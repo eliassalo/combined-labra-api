@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "labra-api",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

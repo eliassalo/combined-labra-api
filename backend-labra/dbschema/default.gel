@@ -1,0 +1,38 @@
+module default {
+    type Project {
+        required name: str {
+            constraint exclusive;
+        }
+
+        required createdAt: datetime {
+            default := std::datetime_of_statement();
+        }
+        
+        required updatedAt: datetime {
+            default := std::datetime_of_statement();
+            rewrite update using (datetime_of_statement());
+        }
+
+        multi tasks := .<project[is Task]
+    }
+
+    
+    type Task {
+        required name: str;
+        required completed: bool {
+            default := false;
+        }
+
+        required createdAt: datetime {
+            default := std::datetime_of_statement();
+        }
+        
+        required updatedAt: datetime {
+            default := std::datetime_of_statement();
+            rewrite update using (datetime_of_statement());
+        }
+        required link project: Project;
+    }
+
+
+}

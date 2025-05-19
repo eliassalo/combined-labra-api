@@ -1,0 +1,11 @@
+meta {
+  name: update task
+  type: http
+  seq: 8
+}
+
+put {
+  url: http://localhost:3000/projects/$%7BprojectId%7D/tasks
+  body: none
+  auth: inherit
+}
